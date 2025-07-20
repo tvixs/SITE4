@@ -98,15 +98,15 @@
   position: fixed;
   top: 0;
   left: -100%;
-  width: 80vw;            /* ✅ делаем 80% ширины экрана */
-  max-width: 300px;
+  width: 40vw;            /* 🔽 уменьшили до 40% ширины экрана */
+  max-width: 180px;       /* 🔽 ограничили максимум до 180px */
   height: 100%;
   background: white;
   border-right: 2px solid black;
   padding: 20px;
-  transition: left 0.9s ease-in-out;
+  transition: left 0.8s ease;
   z-index: 1001;
-  }
+}
   .sidebar.active {
     left: 0;
   }
@@ -188,7 +188,7 @@
     }
 
    .sidebar {
-      width: 90vw;           /* ✅ уже, чем на весь экран */
+      width: 60vw;           /* ✅ уже, чем на весь экран */
       max-width: 320px;      /* ✅ ограничим */
    }
 
