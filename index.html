@@ -167,12 +167,20 @@
     }
 
     .menu-icon {
-      position: absolute;
+      position: fixed; /* чтобы не двигалась с контентом */
       top: 15px;
       left: 15px;
-      margin: 0; /* убираем auto */
-      z-index: 2000;
+      z-index: 999; /* меньше, чем у шторки */
+      background: white; /* на всякий случай */
+      padding: 5px;
+      border-radius: 4px;
     }
+
+
+    .menu-icon.active {
+      display: none;
+    }
+
 
     .shop-name {
       font-size: 28px;
