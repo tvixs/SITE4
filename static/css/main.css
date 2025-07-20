@@ -87,7 +87,7 @@ main {
   font-size: 16px;
 }
 
-/* Стили бокового меню */
+/* --- Sidebar --- */
 .sidebar {
   position: fixed;
   top: 0;
@@ -139,7 +139,7 @@ main {
   transform: translateY(-8px) scale(1.1);
 }
 
-/* --- Медиа-запросы для адаптации --- */
+/* --- МЕДИА-ЗАПРОСЫ: адаптация --- */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -156,6 +156,14 @@ main {
     font-size: 28px;
   }
 
+  .menu-icon {
+    margin: 0 auto;
+  }
+
+  main {
+    padding: 20px 10px;
+  }
+
   .product-grid {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 16px;
@@ -165,15 +173,29 @@ main {
     font-size: 14px;
   }
 
-  .menu-icon {
-    margin: 0 auto;
-  }
-
-  main {
-    padding: 20px 10px;
-  }
-
   .sidebar {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-center {
+    font-size: 20px;
+  }
+
+  .shop-name {
+    font-size: 24px;
+  }
+
+  .product {
+    padding: 10px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product p {
+    font-size: 13px;
   }
 }
