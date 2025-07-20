@@ -24,17 +24,19 @@
     justify-content: space-between;
     border-bottom: 2px solid black;
     padding: 10px 20px;
+    flex-wrap: wrap;
   }
 
   .menu-icon {
     font-size: 35px;
     cursor: pointer;
-    margin-left: 35px;
+    margin-left: 15px;
   }
 
   .nav-center {
     display: flex;
-    gap: 450px;
+    flex-wrap: wrap;
+    gap: 120px;
     font-style: italic;
     font-size: 45px;
     justify-content: center;
@@ -47,6 +49,7 @@
     color: black;
     text-decoration: none;
     font-family: inherit;
+    white-space: nowrap;
   }
 
   main {
@@ -60,6 +63,7 @@
     grid-template-columns: repeat(6, 1fr);
     gap: 35px;
     max-width: 1600px;
+    width: 100%;
   }
 
   .product {
@@ -93,13 +97,13 @@
   .sidebar {
     position: fixed;
     top: 0;
-    left: -260px;
+    left: -60%;
     width: 250px;
     height: 100%;
     background: white;
     border-right: 2px solid black;
     padding: 20px;
-    transition: left 0.3s ease;
+    transition: left 0.8s ease;
     z-index: 1001;
   }
 
@@ -141,7 +145,13 @@
     transform: translateY(-8px) scale(1.1);
   }
 
-  /* 🔥 Адаптив: добавлено в конец */
+  /* 🔥 Адаптив: */
+  @media (max-width: 1024px) {
+    .product-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
   @media (max-width: 768px) {
     header {
       flex-direction: column;
@@ -149,9 +159,11 @@
     }
 
     .nav-center {
-      flex-direction: column;
-      gap: 15px;
-      font-size: 24px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      font-size: 26px;
     }
 
     .menu-icon {
@@ -167,7 +179,7 @@
     }
 
     .product-grid {
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      grid-template-columns: repeat(2, 1fr); /* ✅ ДВА товара в РЯД */
       gap: 20px;
     }
 
@@ -194,7 +206,8 @@
     }
 
     .product-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr); /* ✅ Сохраняем 2 в ряд и на маленьких */
+      gap: 15px;
     }
 
     .product p {
@@ -202,6 +215,7 @@
     }
   }
 </style>
+
   </style>
 </head>
 <body>
