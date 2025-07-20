@@ -1,29 +1,25 @@
-/* --- ОБЩЕЕ --- */
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'Bebas Neue', cursive;
   margin: 0;
   padding: 0;
   background: white;
-  overflow-x: hidden;
+  color: black;
 }
 
-/* --- HEADER --- */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid black;
   padding: 10px 20px;
-  font-family: inherit;
   flex-wrap: wrap;
+  text-align: center;
 }
 
-.shop-name {
-  font-size: 48px;
+.menu-icon {
+  font-size: 35px;
+  cursor: pointer;
+  margin-left: 15px;
 }
 
 .nav-center {
@@ -37,11 +33,6 @@ header {
   flex-wrap: wrap;
 }
 
-.menu-icon {
-  font-size: 28px;
-  font-family: inherit;
-}
-
 .nav-center a,
 .nav-center .shop-name {
   color: black;
@@ -49,42 +40,37 @@ header {
   font-family: inherit;
 }
 
-/* --- MAIN --- */
 main {
   padding: 40px;
   display: flex;
   justify-content: center;
-  font-family: inherit;
   flex-wrap: wrap;
 }
 
-/* --- PRODUCT GRID --- */
 .product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
   max-width: 1200px;
-  padding: 16px;
+  width: 100%;
+  padding: 0 10px;
 }
 
 .product {
-  flex: 1 1 200px;
-  max-width: 220px;
+  border: 2px solid black;
+  padding: 15px;
   text-align: center;
   text-decoration: none;
   color: black;
-  background: #f5f5f5;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 2px solid black;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: inherit;
   transition: transform 0.2s ease;
-  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
 }
 
 .product:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
+  border-color: #555;
 }
 
 .product img {
@@ -97,12 +83,11 @@ main {
 
 .product p {
   font-style: italic;
-  margin-top: 10px;
-  padding: 10px;
+  margin: 0;
   font-size: 16px;
 }
 
-/* --- SIDEBAR --- */
+/* Стили бокового меню */
 .sidebar {
   position: fixed;
   top: 0;
@@ -118,6 +103,14 @@ main {
 
 .sidebar.active {
   left: 0;
+}
+
+.close-btn {
+  font-size: 28px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 10px;
 }
 
 .sidebar ul {
@@ -136,72 +129,51 @@ main {
   color: black;
 }
 
-.close-btn {
-  font-size: 28px;
-  cursor: pointer;
-  position: absolute;
-  right: 15px;
-  top: 10px;
-}
-
-/* --- NAV TEXT EFFECT --- */
 .nav-text {
   display: inline-block;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
 .nav-text:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1.1);
 }
 
-
-@media (max-width: 600px) {
+/* --- Медиа-запросы для адаптации --- */
+@media (max-width: 768px) {
   header {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
     gap: 10px;
-  }
-
-  .shop-name {
-    font-size: 36px;
   }
 
   .nav-center {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     font-size: 24px;
   }
 
-  .menu-icon {
-    font-size: 24px;
+  .shop-name {
+    font-size: 28px;
   }
 
   .product-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .product {
-    max-width: 90%;
-    padding: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
   }
 
   .product p {
     font-size: 14px;
   }
 
-  .sidebar {
-    width: 100%;
-  }
-
-  .sidebar a {
-    font-size: 20px;
+  .menu-icon {
+    margin: 0 auto;
   }
 
   main {
-    padding: 20px;
+    padding: 20px 10px;
+  }
+
+  .sidebar {
+    width: 100%;
   }
 }
