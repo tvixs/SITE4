@@ -94,19 +94,19 @@
     font-size: 18px;
   }
 
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: -60%;
-    width: 250px;
-    height: 100%;
-    background: white;
-    border-right: 2px solid black;
-    padding: 20px;
-    transition: left 0.8s ease;
-    z-index: 1001;
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80vw;            /* ✅ делаем 80% ширины экрана */
+  max-width: 300px;
+  height: 100%;
+  background: white;
+  border-right: 2px solid black;
+  padding: 20px;
+  transition: left 0.9s ease-in-out;
+  z-index: 1001;
   }
-
   .sidebar.active {
     left: 0;
   }
@@ -187,10 +187,10 @@
       font-size: 14px;
     }
 
-    .sidebar {
-      width: 100%;
-    }
-  }
+   .sidebar {
+      width: 90vw;           /* ✅ уже, чем на весь экран */
+      max-width: 320px;      /* ✅ ограничим */
+   }
 
   @media (max-width: 480px) {
     .nav-center {
